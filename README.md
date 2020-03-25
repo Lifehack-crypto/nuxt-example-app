@@ -20,3 +20,11 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Firebase Deploy
+```bash
+$ npm run genarate
+
+$ firebase deploy
+```
+
