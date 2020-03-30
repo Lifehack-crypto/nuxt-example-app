@@ -19,16 +19,14 @@
         </v-dialog>
       </v-card-text>
       <v-card-actions class="d-flex flex-row-reverse">
-        <v-btn color="primary" text @click="taskCancel">キャンセル</v-btn>
-        <v-btn color="primary" text @click="toggleDialog">登録</v-btn>
+        <v-btn color="primary" text @click="initializeState">キャンセル</v-btn>
+        <v-btn color="primary" text @click="add">登録</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   computed: {
     dialog: {
@@ -77,8 +75,16 @@ export default {
     toggleDialog() {
       this.$store.commit('task/toggleDialog')
     },
-    taskCancel() {
-      this.$store.commit('task/taskCancel')
+    initializeState() {
+      this.$store.commit('task/initializeState')
+    },
+    add() {
+      this.$store.dispatch('task/add', {
+        title: this.title,
+        ditail: this.ditail,
+        date: this.date
+      })
+      this.initializeState()
     }
   }
 }

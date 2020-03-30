@@ -18,7 +18,7 @@
 export default {
   data () {
     return {
-      title: 'Vuetify.js'
+      title: 'Todo List'
     }
   }
 }
